@@ -1,0 +1,21 @@
+[
+   // A unique identifier that distinguishes this
+   // interface from other interfaces.
+   uuid(00000001-EAF3-4A7A-A0F2-BCE4C30DA77E),
+
+   // This is version 1.0 of this interface.
+   version(1.0),
+
+   // This interface will use an implicit binding
+   // handle named hExample1Binding.
+   implicit_handle(handle_t hExample1Binding)
+]
+interface Example1 // The interface is named Example1
+{
+	int Delete_File([in,string] const char* path);
+	int Copy_File([in,string] const char* file_name,[in,string] const char* path_server ,[in, size_is(*size)] unsigned char* content, [in]int *size);
+	int Get_Size([in, string] const char* path_file, [out] int *size);
+	int Download_File([in, string] const char* path_server, [in, out, size_is(*size)] unsigned char* content, [in] int *size);
+	int Impersonate ([in, string] const char *user,  [in, string] const char *password);
+	int Exit_Login();
+}
